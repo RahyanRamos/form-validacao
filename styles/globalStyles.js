@@ -1,17 +1,22 @@
 import { StyleSheet } from "react-native";
 
 export const palette = {
-  bg: "#0B0F1A",
-  surface: "#121826",
-  surfaceAlt: "#0F1629",
-  text: "#E5E7EB",
-  textMuted: "#9CA3AF",
-  primary: "#7AA2F7",
+  // Fundos
+  bg: "#0A0F1A",          // quase preto azulado
+  surface: "#162338",      // cartão mais claro para contraste
+  surfaceAlt: "#101a2b",
+  // Texto
+  text: "#F3F4F6",         // quase branco (alto contraste)
+  textMuted: "#C7D2FE",    // lilás claro (lê bem sobre azul escuro)
+  placeholder: "#9FB4D3",  // placeholder mais claro e legível
+  // Estados
+  primary: "#8AB4FF",
   primaryAlt: "#3B82F6",
-  danger: "#F87171",
-  border: "#1F2A44",
-  success: "#10B981",
-  inputBg: "#0F1629",
+  danger: "#FF7B86",
+  success: "#34D399",
+  // Bordas / inputs
+  border: "#2B3B5E",
+  inputBg: "#0E1A2C",
 };
 
 export const globalStyles = StyleSheet.create({
@@ -25,22 +30,28 @@ export const globalStyles = StyleSheet.create({
     paddingBottom: 40,
   },
   title: {
-    fontSize: 24,
-    fontWeight: "700",
+    fontSize: 26,
+    fontWeight: "800",
     color: palette.text,
     marginBottom: 16,
+    letterSpacing: 0.2,
   },
   sectionCard: {
     backgroundColor: palette.surface,
-    borderRadius: 12,
-    padding: 14,
+    borderRadius: 14,
+    padding: 16,
     borderWidth: 1,
     borderColor: palette.border,
     marginBottom: 16,
+    shadowColor: "#000",
+    shadowOpacity: 0.35,
+    shadowRadius: 10,
+    shadowOffset: { width: 0, height: 6 },
+    elevation: 3,
   },
   sectionTitle: {
     color: palette.text,
-    fontSize: 16,
+    fontSize: 17,
     fontWeight: "700",
     marginBottom: 10,
   },
@@ -53,26 +64,27 @@ export const globalStyles = StyleSheet.create({
   },
   label: {
     color: palette.textMuted,
-    fontSize: 12,
+    fontSize: 13,
     marginBottom: 6,
+    fontWeight: "600",
   },
   input: {
     backgroundColor: palette.inputBg,
     color: palette.text,
     borderWidth: 1,
     borderColor: palette.border,
-    borderRadius: 10,
-    paddingHorizontal: 12,
+    borderRadius: 12,
+    paddingHorizontal: 14,
     paddingVertical: 12,
     fontSize: 16,
   },
   inputFocused: {
     borderColor: palette.primary,
     shadowColor: palette.primary,
-    shadowOpacity: 0.15,
-    shadowRadius: 6,
+    shadowOpacity: 0.35,
+    shadowRadius: 8,
     shadowOffset: { width: 0, height: 2 },
-    elevation: 1,
+    elevation: 2,
   },
   inputError: {
     borderColor: palette.danger,
@@ -86,7 +98,7 @@ export const globalStyles = StyleSheet.create({
     marginTop: 6,
     color: palette.danger,
     fontSize: 12,
-    fontWeight: "600",
+    fontWeight: "700",
   },
   button: {
     backgroundColor: palette.primaryAlt,
@@ -95,11 +107,17 @@ export const globalStyles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginTop: 6,
+    shadowColor: "#000",
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 4 },
+    elevation: 2,
   },
   buttonText: {
     color: palette.text,
     fontSize: 16,
-    fontWeight: "700",
+    fontWeight: "800",
+    letterSpacing: 0.3,
   },
   chip: {
     alignSelf: "flex-start",
@@ -120,6 +138,6 @@ export const globalStyles = StyleSheet.create({
     height: 1,
     backgroundColor: palette.border,
     marginVertical: 8,
-    opacity: 0.8,
+    opacity: 0.9,
   },
 });

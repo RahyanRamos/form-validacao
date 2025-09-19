@@ -304,7 +304,7 @@ export default function Formulario() {
     errors[field] ? globalStyles.inputError : null,
   ]);
 
-  const placeholderColor = palette.textMuted;
+  const placeholderColor = palette.placeholder;
 
   return (
     <View style={globalStyles.container}>
