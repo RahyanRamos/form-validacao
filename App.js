@@ -1,9 +1,10 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, StatusBar } from "react-native";
 import Formulario from "./components/Formulario";
 
 export default function App() {
   return (
     <View style={styles.container}>
+      <StatusBar barStyle="light-content" backgroundColor="#0B0F1A" />
       <Formulario />
     </View>
   );
@@ -12,6 +13,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#0B0F1A",
   },
 });
