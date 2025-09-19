@@ -1,20 +1,16 @@
 import { StyleSheet } from "react-native";
 
 export const palette = {
-  // Fundos
-  bg: "#0A0F1A",          // quase preto azulado
-  surface: "#162338",      // cartão mais claro para contraste
+  bg: "#0A0F1A",
+  surface: "#162338",
   surfaceAlt: "#101a2b",
-  // Texto
-  text: "#F3F4F6",         // quase branco (alto contraste)
-  textMuted: "#C7D2FE",    // lilás claro (lê bem sobre azul escuro)
-  placeholder: "#9FB4D3",  // placeholder mais claro e legível
-  // Estados
+  text: "#F3F4F6",
+  textMuted: "#C7D2FE",
+  placeholder: "#9FB4D3",
   primary: "#8AB4FF",
   primaryAlt: "#3B82F6",
   danger: "#FF7B86",
   success: "#34D399",
-  // Bordas / inputs
   border: "#2B3B5E",
   inputBg: "#0E1A2C",
 };

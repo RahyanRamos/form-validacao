@@ -1,15 +1,7 @@
 import React, { useMemo, useState } from "react";
-import {
-  Text,
-  View,
-  TextInput,
-  TouchableOpacity,
-  Alert,
-  ScrollView,
-} from "react-native";
+import {Text, View, TextInput, TouchableOpacity, Alert, ScrollView} from "react-native";
 import { globalStyles, palette } from "../styles/globalStyles";
 
-/** ======= UTIL DE MÁSCARAS ======= */
 const onlyDigits = (v) => (v || "").replace(/\D+/g, "");
 
 const formatCPF = (v) => {
@@ -47,7 +39,6 @@ const formatDataBR = (v) => {
   return d.replace(/(\d{2})(\d{2})(\d{0,4})/, "$1/$2/$3");
 };
 
-/** ======= VALIDAÇÕES ======= */
 const isNomeCompletoValido = (nome) => {
   const clean = (nome || "").trim().replace(/\s+/g, " ");
   if (!clean) return false;
@@ -109,35 +100,24 @@ const senhaFeedback = (s) => {
 };
 
 export default function Formulario() {
-  /** Pessoais */
   const [nome, setNome] = useState("");
   const [dataNasc, setDataNasc] = useState("");
   const [cpf, setCpf] = useState("");
   const [telFixo, setTelFixo] = useState("");
   const [cel, setCel] = useState("");
-
-  /** Menores */
   const [pai, setPai] = useState("");
   const [mae, setMae] = useState("");
-
-  /** Endereço */
   const [cep, setCep] = useState("");
   const [endereco, setEndereco] = useState("");
   const [numero, setNumero] = useState("");
   const [complemento, setComplemento] = useState("");
   const [cidade, setCidade] = useState("");
   const [estado, setEstado] = useState("");
-
-  /** Conta */
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [senha2, setSenha2] = useState("");
-
-  /** Erros e foco */
   const [errors, setErrors] = useState({});
   const [focused, setFocused] = useState(null);
-
-  /** Idade */
   const idade = useMemo(() => {
     const d = parseDataBR(dataNasc);
     return d ? calcIdade(d) : null;
@@ -287,7 +267,6 @@ export default function Formulario() {
       };
       console.log("Dados válidos:", payload);
       Alert.alert("Sucesso!", "Formulário enviado com sucesso.");
-      // reset
       setNome(""); setDataNasc(""); setCpf(""); setTelFixo(""); setCel("");
       setPai(""); setMae(""); setCep(""); setEndereco(""); setNumero("");
       setComplemento(""); setCidade(""); setEstado(""); setEmail("");
@@ -310,11 +289,8 @@ export default function Formulario() {
     <View style={globalStyles.container}>
       <ScrollView style={globalStyles.scrollContent} keyboardShouldPersistTaps="handled">
         <Text style={globalStyles.title}>Cadastro</Text>
-
-        {/* ====== INFORMAÇÕES PESSOAIS ====== */}
         <View style={globalStyles.sectionCard}>
           <Text style={globalStyles.sectionTitle}>Informações Pessoais</Text>
-
           <View style={globalStyles.inputContainer}>
             <Text style={globalStyles.label}>Nome Completo</Text>
             <TextInput
@@ -440,7 +416,6 @@ export default function Formulario() {
           )}
         </View>
 
-        {/* ====== ENDEREÇO ====== */}
         <View style={globalStyles.sectionCard}>
           <Text style={globalStyles.sectionTitle}>Endereço</Text>
 
@@ -534,7 +509,6 @@ export default function Formulario() {
           </View>
         </View>
 
-        {/* ====== CONTA ====== */}
         <View style={globalStyles.sectionCard}>
           <Text style={globalStyles.sectionTitle}>Informações da Conta</Text>
 
